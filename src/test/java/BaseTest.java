@@ -19,6 +19,7 @@ public class BaseTest {
 
     @AfterMethod
     public void closeBrowser() {
+        sleep(2);
         System.out.println("Close browser from BaseTest...");
         driver.quit();
     }

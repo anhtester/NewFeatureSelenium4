@@ -15,6 +15,7 @@ public class AddCookies {
         driver.get("https://anhtester.com/");
 
         // Adds the cookie into current browser context
+        // accountdemo@mailinator.com / 123456
         driver.manage().addCookie(new Cookie("ci_session", "9a44c54bb8ee51ea46571ab6309b591519320740"));
         Thread.sleep(2000);
         driver.navigate().refresh();

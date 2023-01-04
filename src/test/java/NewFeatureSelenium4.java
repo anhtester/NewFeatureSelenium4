@@ -1,14 +1,15 @@
 import com.google.common.util.concurrent.Uninterruptibles;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.HasDevTools;
 import org.openqa.selenium.devtools.v108.network.Network;
 import org.openqa.selenium.devtools.v108.network.model.Headers;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.locators.RelativeLocator;
-import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,6 +26,7 @@ public class NewFeatureSelenium4 {
 
     @BeforeMethod
     public void createDriver() {
+        WebDriverManager.chromiumdriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));

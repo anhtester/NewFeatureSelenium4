@@ -12,6 +12,14 @@ public class WebUI {
         driver = _driver;
     }
 
+    public static void sleep(double second) {
+        try {
+            Thread.sleep((long) (1000 * second));
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public static Boolean checkElementExist(By by) {
         List<WebElement> listElement = driver.findElements(by);
 

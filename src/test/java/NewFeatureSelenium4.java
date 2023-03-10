@@ -2,6 +2,7 @@ import com.google.common.util.concurrent.Uninterruptibles;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.HasDevTools;
 import org.openqa.selenium.devtools.v108.network.Network;
@@ -26,8 +27,14 @@ public class NewFeatureSelenium4 {
 
     @BeforeMethod
     public void createDriver() {
-        WebDriverManager.chromiumdriver().setup();
-        driver = new ChromeDriver();
+        WebDriverManager.chromedriver().setup();
+        //System.setProperty("webdriver.driver.chrome", "C:\\Users\\PC\\.cache\\selenium\\chromedriver\\win32\\111.0.5563.64\\chromedriver.exe");
+
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
+
+        driver = new ChromeDriver(options);
+
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -131,11 +138,7 @@ public class NewFeatureSelenium4 {
 
     @AfterMethod
     public void closeDriver() {
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        WebUI.sleep(2);
         driver.quit();
     }
 

@@ -2,21 +2,19 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
 import java.time.Duration;
 import java.util.List;
 
-public class CloseAdsGoogle {
-    public static void main(String[] args) {
+public class CloseAdsGoogle extends BaseTest {
+    @Test
+    public void testCloseAdsGoogle() {
         try {
-            WebDriver driver;
-            driver = new ChromeDriver();
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-            driver.manage().window().maximize();
             driver.get("https://demo.guru99.com/V4/");
             Thread.sleep(2000);
-            driver.findElement(By.name("uid")).sendKeys("mngr453980");
-            driver.findElement(By.name("password")).sendKeys("ymybuga");
+            driver.findElement(By.name("uid")).sendKeys("mngr484782");
+            driver.findElement(By.name("password")).sendKeys("nEzarEs");
             driver.findElement(By.name("btnLogin")).click();
             Thread.sleep(2000);
             driver.findElement(By.linkText("New Customer")).click();

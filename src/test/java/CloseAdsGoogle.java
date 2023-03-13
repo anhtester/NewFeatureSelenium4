@@ -19,9 +19,12 @@ public class CloseAdsGoogle extends BaseTest {
             Thread.sleep(2000);
             driver.findElement(By.linkText("New Customer")).click();
             Thread.sleep(2000);
-            WebElement frame1 = driver.findElement(By.id("google_ads_iframe_/24132379/INTERSTITIAL_DemoGuru99_0"));
-            driver.switchTo().frame(frame1);
 
+            //Get element in frame by ID
+            WebElement frame1 = driver.findElement(By.id("google_ads_iframe_/24132379/INTERSTITIAL_DemoGuru99_0"));
+            //Switch to frame with element
+            driver.switchTo().frame(frame1);
+            //Check button X or Close displays
             List<WebElement> checkButtonX = driver.findElements(By.xpath("//div[@id='dismiss-button']"));
             System.out.println("checkButtonX: " + checkButtonX.size());
             if (checkButtonX.size() > 0) {
@@ -41,7 +44,6 @@ public class CloseAdsGoogle extends BaseTest {
 
             driver.switchTo().defaultContent();
             Thread.sleep(2000);
-            driver.quit();
         } catch (Exception e) {
             e.printStackTrace();
         }

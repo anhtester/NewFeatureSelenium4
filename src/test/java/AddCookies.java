@@ -1,26 +1,34 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class AddCookies {
-    public static void main(String[] args) throws InterruptedException {
-        WebDriver driver;
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().window().maximize();
-        driver.get("https://anhtester.com/");
+public class AddCookies extends BaseTest {
 
-        // Adds the cookie into current browser context
-        // accountdemo@mailinator.com / 123456
-        driver.manage().addCookie(new Cookie("ci_session", "9a44c54bb8ee51ea46571ab6309b591519320740"));
-        Thread.sleep(2000);
+    private static String cookiesCurrent;
+
+    @Test(priority = 1)
+    public void testGetCookies() {
+        driver.get("https://rise.fairsketch.com/signin");
+        driver.findElement(By.xpath("//button[normalize-space()='Sign in']")).click();
+        sleep(5);
+        //Get cookies current by name
+        cookiesCurrent = driver.manage().getCookieNamed("ci_session").getValue();
+        System.out.println("Current Cookies: " + cookiesCurrent);
+    }
+
+    @Test(priority = 2)
+    public void testAddCookies() {
+        driver.get("https://rise.fairsketch.com/signin");
+        // Add the cookie into current browser context (cookiesCurrent)
+        System.out.println("Get Current Cookies: " + cookiesCurrent);
+        driver.manage().addCookie(new Cookie("ci_session", cookiesCurrent));
+        sleep(3);
         driver.navigate().refresh();
-        Thread.sleep(5000);
-
-        driver.quit();
+        sleep(5);
     }
 }

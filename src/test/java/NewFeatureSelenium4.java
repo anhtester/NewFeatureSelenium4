@@ -87,7 +87,7 @@ public class NewFeatureSelenium4 {
     }
 
     @Test
-    public void TC5_RelativeLocators() throws InterruptedException {
+    public void TC5_RelativeLocators() {
         driver.get("https://rise.fairsketch.com/signin");
 
         WebElement password = driver.findElement(By.id("password"));
@@ -96,7 +96,7 @@ public class NewFeatureSelenium4 {
         email.clear();
         email.sendKeys("anhtester@mailinator.com");
 
-        Thread.sleep(2000);
+        WebUI.sleep(2);
 
         driver.get("https://anhtester.com");
 
@@ -138,7 +138,6 @@ public class NewFeatureSelenium4 {
 
     @AfterMethod
     public void closeDriver() {
-        WebUI.sleep(2);
         driver.quit();
     }
 

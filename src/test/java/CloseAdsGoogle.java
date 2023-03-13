@@ -12,7 +12,7 @@ public class CloseAdsGoogle extends BaseTest {
     public void testCloseAdsGoogle() {
         try {
             driver.get("https://demo.guru99.com/V4/");
-            Thread.sleep(2000);
+            Thread.sleep(1000);
             driver.findElement(By.name("uid")).sendKeys("mngr484782");
             driver.findElement(By.name("password")).sendKeys("nEzarEs");
             driver.findElement(By.name("btnLogin")).click();
@@ -32,7 +32,7 @@ public class CloseAdsGoogle extends BaseTest {
             } else {
                 WebElement frame2 = driver.findElement(By.id("ad_iframe"));
                 driver.switchTo().frame(frame2);
-                Thread.sleep(1000);
+                Thread.sleep(6000);
                 List<WebElement> checkButtonClose = driver.findElements(By.xpath("//div[@id='dismiss-button']//span[normalize-space()='Close']"));
                 System.out.println("checkButtonClose: " + checkButtonClose.size());
                 if (checkButtonClose.size() > 0) {

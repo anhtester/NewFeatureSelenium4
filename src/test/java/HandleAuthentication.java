@@ -10,6 +10,7 @@ import java.time.Duration;
 import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 public class HandleAuthentication extends BaseTest {
     @Test
@@ -24,7 +25,7 @@ public class HandleAuthentication extends BaseTest {
         devTools.createSession();
 
         // Enable the Network domain of devtools
-        devTools.send(Network.enable(java.util.Optional.of(100000), java.util.Optional.of(100000), java.util.Optional.of(100000)));
+        devTools.send(Network.enable(Optional.of(100000), Optional.of(100000), Optional.of(100000)));
         String auth = username + ":" + password;
 
         // Encoding the username and password using Base64 (java.util)

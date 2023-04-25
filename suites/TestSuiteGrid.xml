@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Test Suite Selenium Grid" verbose="1" parallel="tests">
+    <test name="Test Selenium Grid 1" parallel="methods">
+        <parameter name="ipAddress" value="192.168.1.8"/>
+        <parameter name="portNumber" value="5556"/>
+        <classes>
+            <class name="RunOnGrid"/>
+        </classes>
+    </test>
+
+    <test name="Test Selenium Grid 2" parallel="methods">
+        <parameter name="ipAddress" value="192.168.1.8"/>
+        <parameter name="portNumber" value="5557"/>
+        <classes>
+            <class name="RunOnGrid"/>
+        </classes>
+    </test>
+
+</suite>

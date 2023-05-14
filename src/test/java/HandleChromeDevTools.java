@@ -25,10 +25,9 @@ public class HandleChromeDevTools extends BaseTest {
                 3000000,
                 Optional.of(ConnectionType.CELLULAR3G)));
 
-        driver.get("https://demo.activeitzone.com/ecommerce/");
+        driver.get("https://cms.anhtester.com");
+        WebUI.waitForPageLoaded();
         driver.findElement(By.xpath("//i[@class='la la-close fs-20']")).click();
-        driver.findElement(By.xpath("(//a[normalize-space()='Registration']/parent::li)/preceding-sibling::li/a[normalize-space()='Login']")).click();
-        driver.findElement(By.xpath("//button[@onclick='autoFillCustomer()']")).click();
         sleep(2);
     }
 

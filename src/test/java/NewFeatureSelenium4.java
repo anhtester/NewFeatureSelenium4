@@ -2,7 +2,6 @@ import com.google.common.util.concurrent.Uninterruptibles;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.HasDevTools;
 import org.openqa.selenium.devtools.v111.network.Network;
@@ -28,22 +27,18 @@ public class NewFeatureSelenium4 {
     @BeforeMethod
     public void createDriver() {
         WebDriverManager.chromedriver().setup();
-        //System.setProperty("webdriver.driver.chrome", "C:\\Users\\PC\\.cache\\selenium\\chromedriver\\win32\\111.0.5563.64\\chromedriver.exe");
-
-//        ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--remote-allow-origins=*");
-//        driver = new ChromeDriver(options);
-
+        System.setProperty("webdriver.http.factory", "jdk-http-client");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        new WebUI(driver);
     }
 
     @Test
     public void TC1_ScreenshotElement() {
         driver.get("https://anhtester.com");
-
+        WebUI.waitForPageLoaded();
         WebElement logo = driver.findElement(By.xpath("//a[@class='logo']"));
 
         File file = logo.getScreenshotAs(OutputType.FILE);
@@ -59,7 +54,7 @@ public class NewFeatureSelenium4 {
     @Test
     public void TC2_NewTab() {
         driver.get("https://anhtester.com");
-
+        WebUI.waitForPageLoaded();
         driver.switchTo().newWindow(WindowType.TAB);
 
         driver.get("https://google.com");
@@ -68,7 +63,7 @@ public class NewFeatureSelenium4 {
     @Test
     public void TC3_NewWindow() {
         driver.get("https://anhtester.com");
-
+        WebUI.waitForPageLoaded();
         driver.switchTo().newWindow(WindowType.WINDOW);
 
         driver.get("https://google.com");
@@ -77,7 +72,7 @@ public class NewFeatureSelenium4 {
     @Test
     public void TC4_ObjectLocation() {
         driver.get("https://anhtester.com");
-
+        WebUI.waitForPageLoaded();
         WebElement element = driver.findElement(By.xpath("//a[@id='btn-login']"));
 
         System.out.println("Height is: " + element.getRect().getDimension().getHeight());
@@ -89,7 +84,7 @@ public class NewFeatureSelenium4 {
     @Test
     public void TC5_RelativeLocators() {
         driver.get("https://rise.fairsketch.com/signin");
-
+        WebUI.waitForPageLoaded();
         WebElement password = driver.findElement(By.id("password"));
         WebElement email = driver.findElement(RelativeLocator.with(By.tagName("input")).above(password));
 

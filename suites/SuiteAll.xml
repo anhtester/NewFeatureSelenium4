@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite All">
+    <test name="Test All" parallel="classes">
+        <classes>
+            <class name="NewFeatureSelenium4"/>
+            <class name="AddCookies"/>
+            <class name="CloseAdsGoogle"/>
+            <class name="HandleAuthentication"/>
+            <class name="HandleChatboxMessenger"/>
+            <class name="HandleChromeDevTools"/>
+        </classes>
+    </test>
+</suite>

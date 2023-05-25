@@ -2,6 +2,7 @@ import com.google.common.util.concurrent.Uninterruptibles;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.HasDevTools;
 import org.openqa.selenium.devtools.v111.network.Network;
@@ -23,12 +24,18 @@ import java.util.Map;
 public class NewFeatureSelenium4 {
 
     private WebDriver driver;
+    private boolean HEADLESS = true;
 
     @BeforeMethod
     public void createDriver() {
-        WebDriverManager.chromedriver().setup();
         System.setProperty("webdriver.http.factory", "jdk-http-client");
-        driver = new ChromeDriver();
+        WebDriverManager.chromedriver().setup();
+        ChromeOptions options = new ChromeOptions();
+        if (HEADLESS == true) {
+            options.addArguments("--headless=new");
+            options.addArguments("window-size=1800,900");
+        }
+        driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));

@@ -6,7 +6,7 @@
 
     <groupId>anhtester.com</groupId>
     <artifactId>FeatureSelenium4</artifactId>
-    <version>4.9.1</version>
+    <version>4.10.0</version>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -19,14 +19,14 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.9.1</version>
+            <version>4.10.0</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-http-jdk-client -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-http-jdk-client</artifactId>
-            <version>4.9.1</version>
+            <version>4.10.0</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.testng/testng -->

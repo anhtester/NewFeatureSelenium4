@@ -1,10 +1,10 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.HasDevTools;
-import org.openqa.selenium.devtools.v111.log.Log;
-import org.openqa.selenium.devtools.v111.network.Network;
-import org.openqa.selenium.devtools.v111.network.model.ConnectionType;
-import org.openqa.selenium.devtools.v111.security.Security;
+import org.openqa.selenium.devtools.v114.log.Log;
+import org.openqa.selenium.devtools.v114.network.Network;
+import org.openqa.selenium.devtools.v114.network.model.ConnectionType;
+import org.openqa.selenium.devtools.v114.security.Security;
 import org.testng.annotations.Test;
 
 import java.util.Optional;

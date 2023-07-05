@@ -1,5 +1,4 @@
 import com.google.common.util.concurrent.Uninterruptibles;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -29,7 +28,6 @@ public class NewFeatureSelenium4 {
     @BeforeMethod
     public void createDriver() {
         System.setProperty("webdriver.http.factory", "jdk-http-client");
-        WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         if (HEADLESS == true) {
             options.addArguments("--headless=new");

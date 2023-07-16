@@ -1,10 +1,7 @@
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
 import java.util.List;
 
 public class CloseAdsGoogle extends BaseTest {
@@ -13,8 +10,8 @@ public class CloseAdsGoogle extends BaseTest {
         try {
             driver.get("https://demo.guru99.com/V4/");
             Thread.sleep(1000);
-            driver.findElement(By.name("uid")).sendKeys("mngr484782");
-            driver.findElement(By.name("password")).sendKeys("nEzarEs");
+            driver.findElement(By.name("uid")).sendKeys("mngr513549");
+            driver.findElement(By.name("password")).sendKeys("jutages");
             driver.findElement(By.name("btnLogin")).click();
             Thread.sleep(2000);
             driver.findElement(By.linkText("New Customer")).click();

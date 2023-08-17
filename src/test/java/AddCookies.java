@@ -1,3 +1,4 @@
+import com.anhtester.common.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.testng.annotations.Test;

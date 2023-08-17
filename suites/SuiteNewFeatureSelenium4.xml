@@ -3,7 +3,7 @@
 <suite name="Test Suite New Feature Selenium 4 Full">
     <test name="Test All New Feature Selenium 4">
         <classes>
-            <class name="NewFeatureSelenium4"/>
+            <class name="com.anhtester.NewFeatureSelenium4"/>
         </classes>
     </test>
 </suite>

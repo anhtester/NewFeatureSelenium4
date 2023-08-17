@@ -1,3 +1,5 @@
+package com.anhtester;
+
 import com.anhtester.common.BaseTest;
 import com.google.common.util.concurrent.Uninterruptibles;
 import org.openqa.selenium.By;

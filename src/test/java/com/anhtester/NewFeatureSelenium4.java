@@ -1,4 +1,5 @@
-import com.anhtester.WebUI;
+package com.anhtester;
+
 import com.google.common.util.concurrent.Uninterruptibles;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;

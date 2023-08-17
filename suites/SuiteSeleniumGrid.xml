@@ -5,7 +5,7 @@
         <parameter name="ipAddress" value="192.168.1.8"/>
         <parameter name="portNumber" value="5556"/>
         <classes>
-            <class name="RunOnGrid"/>
+            <class name="com.anhtester.RunOnGrid"/>
         </classes>
     </test>
 
@@ -13,7 +13,7 @@
         <parameter name="ipAddress" value="192.168.1.8"/>
         <parameter name="portNumber" value="5557"/>
         <classes>
-            <class name="RunOnGrid"/>
+            <class name="com.anhtester.RunOnGrid"/>
         </classes>
     </test>
 

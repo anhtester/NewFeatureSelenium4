@@ -3,12 +3,12 @@
 <suite name="Suite All">
     <test name="Test All" parallel="classes">
         <classes>
-            <class name="NewFeatureSelenium4"/>
-            <class name="AddCookies"/>
-            <class name="CloseAdsGoogle"/>
-            <class name="HandleAuthentication"/>
-            <class name="HandleChatboxMessenger"/>
-            <class name="HandleChromeDevTools"/>
+            <class name="com.anhtester.NewFeatureSelenium4"/>
+            <class name="com.anhtester.AddCookies"/>
+            <class name="com.anhtester.CloseAdsGoogle"/>
+            <class name="com.anhtester.HandleAuthentication"/>
+            <class name="com.anhtester.HandleChatboxMessenger"/>
+            <class name="com.anhtester.HandleChromeDevTools"/>
         </classes>
     </test>
 </suite>

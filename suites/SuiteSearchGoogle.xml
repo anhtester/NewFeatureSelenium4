@@ -3,7 +3,7 @@
 <suite name="Test Suite Search Google">
     <test name="Test Search Google">
         <classes>
-            <class name="SearchGoogle">
+            <class name="com.anhtester.SearchGoogle">
                 <methods>
                     <include name="testSearchKeywordOnGoogle01"/>
                     <include name="testSearchKeywordOnGoogle02"/>

@@ -1,3 +1,5 @@
+package com.anhtester;
+
 import com.anhtester.common.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;

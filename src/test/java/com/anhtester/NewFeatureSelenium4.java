@@ -25,7 +25,7 @@ import java.util.Map;
 public class NewFeatureSelenium4 {
 
     private WebDriver driver;
-    private boolean HEADLESS = true;
+    private boolean HEADLESS = false;
 
     @BeforeMethod
     public void createDriver() {
@@ -40,6 +40,11 @@ public class NewFeatureSelenium4 {
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         new WebUI(driver);
+    }
+
+    @Test
+    public void TC7_PageLoadStrategy() {
+        driver.get("https://anhtester.com");
     }
 
     @Test

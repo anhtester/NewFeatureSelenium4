@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="Suite All">
-    <test name="Test All" parallel="classes">
+    <test name="Test All features" parallel="none">
         <classes>
             <class name="com.anhtester.NewFeatureSelenium4"/>
             <class name="com.anhtester.AddCookies"/>
@@ -9,6 +9,7 @@
             <class name="com.anhtester.HandleAuthentication"/>
             <class name="com.anhtester.HandleChatboxMessenger"/>
             <class name="com.anhtester.HandleChromeDevTools"/>
+            <class name="com.anhtester.SearchGoogle"/>
         </classes>
     </test>
 </suite>

@@ -8,6 +8,7 @@ import org.openqa.selenium.devtools.v114.log.Log;
 import org.openqa.selenium.devtools.v114.network.Network;
 import org.openqa.selenium.devtools.v114.network.model.ConnectionType;
 import org.openqa.selenium.devtools.v114.security.Security;
+import org.openqa.selenium.devtools.v115.emulation.Emulation;
 import org.testng.annotations.Test;
 
 import java.util.Optional;
@@ -39,11 +40,11 @@ public class HandleChromeDevTools extends BaseTest {
         DevTools devTools = ((HasDevTools) driver).getDevTools();
         devTools.createSession();
 
-//        devTools.send(Emulation.setGeolocationOverride(
-//                Optional.of(52.5043),
-//                Optional.of(13.4501),
-//                Optional.of(1))
-//        );
+        devTools.send(Emulation.setGeolocationOverride(
+                Optional.of(52.5043),
+                Optional.of(13.4501),
+                Optional.of(1))
+        );
 
         driver.get("https://where-am-i.org/");
 

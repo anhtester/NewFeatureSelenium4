@@ -10,13 +10,15 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class SetBrowserVersion {
+public class GetChromeDriverLogs {
     private WebDriver driver;
 
     @BeforeMethod
     public void createDriver() {
-        //Đang dùng Selenium 4.11.0 (chỉ support đến CDP 115)
         System.setProperty("webdriver.http.factory", "jdk-http-client");
+
+        System.setProperty("webdriver.chrome.logfile", "chromedriverlogs.log");
+        System.setProperty("webdriver.chrome.verboseLogging", "true");
 
         ChromeOptions options = new ChromeOptions();
         options.setBrowserVersion("115");
@@ -29,7 +31,7 @@ public class SetBrowserVersion {
     }
 
     @Test(priority = 1)
-    public void testSetBrowserVersion() {
+    public void testGetChromeDriverLogs() {
         driver.get("https://crm.anhtester.com/admin/authentication");
         driver.findElement(By.xpath("//input[@id='email']")).sendKeys("admin@example.com");
         driver.findElement(By.xpath("//input[@id='password']")).sendKeys("123456");

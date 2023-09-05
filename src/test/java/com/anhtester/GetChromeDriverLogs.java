@@ -11,21 +11,27 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 public class GetChromeDriverLogs {
+
     private WebDriver driver;
 
     @BeforeMethod
     public void createDriver() {
         System.setProperty("webdriver.http.factory", "jdk-http-client");
 
+        // System.setProperty("webdriver.edge.logfile", "edgedriverlogs.log");
+        // System.setProperty("webdriver.edge.verboseLogging", "true");
+        // System.setProperty("webdriver.firefox.logfile", "firefoxdriverlogs.log");
+        // System.setProperty("webdriver.firefox.verboseLogging", "true");
+
         System.setProperty("webdriver.chrome.logfile", "chromedriverlogs.log");
         System.setProperty("webdriver.chrome.verboseLogging", "true");
 
         ChromeOptions options = new ChromeOptions();
-        options.setBrowserVersion("115");
+        options.setBrowserVersion("117"); //Hiện tại 116 mà mình cố tình chaạy 117 xem logs như nào =))
 
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         new WebUI(driver);
     }

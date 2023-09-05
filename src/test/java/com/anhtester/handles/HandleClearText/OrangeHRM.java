@@ -30,19 +30,22 @@ public class OrangeHRM extends BaseTest {
         Thread.sleep(2000);
         driver.findElement(By.xpath("//i[@class='oxd-icon bi-pencil-fill']/parent::button")).click();
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//label[normalize-space()='Username']/parent::div/following-sibling::div/input")).click(); //Edit button
-        Thread.sleep(1000);
 
         //driver.findElement(By.xpath("//label[normalize-space()='Username']/parent::div/following-sibling::div/input")).clear(); //Input Username
 
+        //Clear text on element
+        //Click on input > Ctrl A > Delete
+        driver.findElement(By.xpath("//label[normalize-space()='Username']/parent::div/following-sibling::div/input")).click(); //Edit button
+        Thread.sleep(1000);
         Actions actions = new Actions(driver);
         actions.keyDown(Keys.CONTROL).keyDown("a").keyUp(Keys.CONTROL).keyUp("a").build().perform();
-        actions.keyDown(Keys.DELETE).build().perform();
+        actions.keyDown(Keys.DELETE).perform();
+        actions.keyUp(Keys.DELETE).perform();
 
         Thread.sleep(1000);
         driver.findElement(By.xpath("//label[normalize-space()='Username']/parent::div/following-sibling::div/input")).sendKeys("Linhnmbt");
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//button[normalize-space()='Save']")).click();
-        Thread.sleep(1000);
+//        driver.findElement(By.xpath("//button[normalize-space()='Save']")).click();
+//        Thread.sleep(1000);
     }
 }

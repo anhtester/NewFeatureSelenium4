@@ -50,7 +50,7 @@ public class WebUI {
     }
 
     public static void waitForPageLoaded() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30), Duration.ofMillis(500));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20), Duration.ofMillis(500));
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
         // wait for Javascript to loaded
@@ -61,7 +61,7 @@ public class WebUI {
 
         //Wait Javascript until it is Ready!
         if (!jsReady) {
-            System.out.println("Javascript in NOT Ready!");
+            //System.out.println("Javascript in NOT Ready!");
             //Wait for Javascript to load
             try {
                 wait.until(jsLoad);

@@ -25,7 +25,7 @@ public class AddCookies extends BaseTest {
         // Add the cookie into current browser context (cookiesCurrent)
         System.out.println("Get Current Cookies: " + cookiesCurrent);
         driver.manage().addCookie(new Cookie("ci_session", cookiesCurrent));
-        sleep(3);
+        sleep(1);
         driver.navigate().refresh();
         sleep(5);
     }

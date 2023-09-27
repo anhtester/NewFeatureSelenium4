@@ -4,11 +4,11 @@ import com.anhtester.common.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.HasDevTools;
-import org.openqa.selenium.devtools.v114.log.Log;
-import org.openqa.selenium.devtools.v114.network.Network;
-import org.openqa.selenium.devtools.v114.network.model.ConnectionType;
-import org.openqa.selenium.devtools.v114.security.Security;
-import org.openqa.selenium.devtools.v115.emulation.Emulation;
+import org.openqa.selenium.devtools.v117.emulation.Emulation;
+import org.openqa.selenium.devtools.v117.log.Log;
+import org.openqa.selenium.devtools.v117.network.Network;
+import org.openqa.selenium.devtools.v117.network.model.ConnectionType;
+import org.openqa.selenium.devtools.v117.security.Security;
 import org.testng.annotations.Test;
 
 import java.util.Optional;

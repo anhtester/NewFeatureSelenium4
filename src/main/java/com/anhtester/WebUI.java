@@ -53,16 +53,10 @@ public class WebUI {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20), Duration.ofMillis(500));
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
-        // wait for Javascript to loaded
         ExpectedCondition<Boolean> jsLoad = driver -> ((JavascriptExecutor) driver).executeScript("return document.readyState").toString().equals("complete");
 
-        //Get JS is Ready
         boolean jsReady = js.executeScript("return document.readyState").toString().equals("complete");
-
-        //Wait Javascript until it is Ready!
         if (!jsReady) {
-            //System.out.println("Javascript in NOT Ready!");
-            //Wait for Javascript to load
             try {
                 wait.until(jsLoad);
             } catch (Throwable error) {

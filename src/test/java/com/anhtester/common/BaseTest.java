@@ -15,7 +15,6 @@ public class BaseTest {
 
     @BeforeMethod
     public void createBrowser() {
-        System.setProperty("webdriver.http.factory", "jdk-http-client");
         ChromeOptions options = new ChromeOptions();
         options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
         driver = new ChromeDriver(options);

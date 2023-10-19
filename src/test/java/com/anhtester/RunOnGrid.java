@@ -21,8 +21,7 @@ public class RunOnGrid {
     @Parameters({"ipAddress", "portNumber"})
     @BeforeMethod
     public void setDriver(String ipAddress, String portNumber) throws MalformedURLException {
-        System.setProperty("webdriver.http.factory", "jdk-http-client");
-        String HUB_URL = "http://192.168.77.1:4444/wd/hub";
+        String HUB_URL = "http://192.168.1.11:4444/wd/hub";
         //HUB_URL = "http://localhost:4444/wd/hub";
         String NODE_URL = "http://" + ipAddress + ":" + portNumber + "";
 
@@ -94,7 +93,7 @@ public class RunOnGrid {
         WebUI.waitForPageLoaded();
         getDriver().findElement(By.xpath("//textarea[@name='q']")).sendKeys("selenium là gì", Keys.ENTER);
         WebUI.waitForPageLoaded();
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(false);", getDriver().findElement(By.xpath("//textarea[@name='q']")));
+        ((JavascriptExecutor) driver.get()).executeScript("arguments[0].scrollIntoView(false);", getDriver().findElement(By.xpath("//textarea[@name='q']")));
         getDriver().findElement(By.xpath("//a[contains(@href,'https://anhtester.com')]//h3")).click();
         WebUI.waitForPageLoaded();
         sleep(3);

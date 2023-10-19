@@ -6,7 +6,7 @@
 
     <groupId>anhtester.com</groupId>
     <artifactId>FeatureSelenium4</artifactId>
-    <version>4.14.0</version>
+    <version>4.14.1</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

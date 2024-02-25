@@ -1,10 +1,8 @@
 package com.anhtester.handles.HandleDropdown;
 
-import com.anhtester.WebUI;
+import com.anhtester.keywords.WebUI;
 import com.anhtester.common.BaseTest;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 public class CRM_Dropdown_TaskPage extends BaseTest {

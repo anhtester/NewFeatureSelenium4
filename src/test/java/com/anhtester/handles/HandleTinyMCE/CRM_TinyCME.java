@@ -1,6 +1,6 @@
 package com.anhtester.handles.HandleTinyMCE;
 
-import com.anhtester.WebUI;
+import com.anhtester.keywords.WebUI;
 import com.anhtester.common.BaseTest;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;

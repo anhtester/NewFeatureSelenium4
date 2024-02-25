@@ -1,5 +1,8 @@
 package com.anhtester;
 
+import com.anhtester.common.BaseTest;
+import com.anhtester.helpers.PropertiesHelper;
+import com.anhtester.keywords.WebUI;
 import com.google.common.util.concurrent.Uninterruptibles;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -21,31 +24,9 @@ import java.time.Duration;
 import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 
-public class NewFeatureSelenium4 {
-
-    private WebDriver driver;
-    private boolean HEADLESS = false;
-
-    @BeforeMethod
-    public void createDriver() {
-        System.setProperty("webdriver.http.factory", "jdk-http-client");
-        ChromeOptions options = new ChromeOptions();
-        if (HEADLESS == true) {
-            options.addArguments("--headless=new");
-            options.addArguments("window-size=1800,900");
-        }
-        driver = new ChromeDriver(options);
-        driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        new WebUI(driver);
-    }
-
-    @Test
-    public void TC7_PageLoadStrategy() {
-        driver.get("https://anhtester.com");
-    }
+public class NewFeatureSelenium4 extends BaseTest {
 
     @Test
     public void TC1_ScreenshotElement() {
@@ -141,11 +122,6 @@ public class NewFeatureSelenium4 {
 
         String successFullyLoggedInText = driver.findElement(By.xpath("//p")).getText();
         System.out.println(successFullyLoggedInText);
-    }
-
-    @AfterMethod
-    public void closeDriver() {
-        driver.quit();
     }
 
 }

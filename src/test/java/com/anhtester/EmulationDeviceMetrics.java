@@ -1,5 +1,6 @@
 package com.anhtester;
 
+import com.anhtester.keywords.WebUI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.PageLoadStrategy;
@@ -14,7 +15,7 @@ import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.anhtester.WebUI.sleep;
+import static com.anhtester.keywords.WebUI.sleep;
 
 public class EmulationDeviceMetrics {
     private WebDriver driver;

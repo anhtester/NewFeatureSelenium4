@@ -5,11 +5,11 @@ import com.anhtester.keywords.WebUI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.HasDevTools;
-import org.openqa.selenium.devtools.v120.emulation.Emulation;
-import org.openqa.selenium.devtools.v120.log.Log;
-import org.openqa.selenium.devtools.v120.network.Network;
-import org.openqa.selenium.devtools.v120.network.model.ConnectionType;
-import org.openqa.selenium.devtools.v120.security.Security;
+import org.openqa.selenium.devtools.v124.emulation.Emulation;
+import org.openqa.selenium.devtools.v124.log.Log;
+import org.openqa.selenium.devtools.v124.network.Network;
+import org.openqa.selenium.devtools.v124.network.model.ConnectionType;
+import org.openqa.selenium.devtools.v124.security.Security;
 import org.testng.annotations.Test;
 
 import java.util.Optional;
@@ -28,7 +28,11 @@ public class HandleChromeDevTools extends BaseTest {
                 500,
                 2000000,
                 3000000,
-                Optional.of(ConnectionType.CELLULAR3G)));
+                Optional.of(ConnectionType.CELLULAR3G),
+                Optional.of(1),
+                Optional.of(1),
+                Optional.of(true)
+        ));
 
         driver.get("https://cms.anhtester.com");
         WebUI.waitForPageLoaded();

@@ -76,13 +76,13 @@ public class NewFeatureSelenium4 extends BaseTest {
 
     @Test
     public void TC5_RelativeLocators() {
-        driver.get("https://rise.fairsketch.com/signin");
+        driver.get("https://rise.anhtester.com/signin");
         WebUI.waitForPageLoaded();
         WebElement password = driver.findElement(By.id("password"));
         WebElement email = driver.findElement(RelativeLocator.with(By.tagName("input")).above(password));
 
         email.clear();
-        email.sendKeys("anhtester@mailinator.com");
+        email.sendKeys("admin@example.com");
 
         WebUI.sleep(2);
 

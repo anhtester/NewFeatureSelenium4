@@ -24,7 +24,7 @@ public class RunOnGrid {
     public void setDriver(String ipAddress, String portNumber) throws MalformedURLException {
         String HUB_URL = "http://192.168.1.11:4444/wd/hub";
         //HUB_URL = "http://localhost:4444/wd/hub";
-        String NODE_URL = "http://" + ipAddress + ":" + portNumber + "";
+        String NODE_URL = "http://" + ipAddress + ":" + portNumber;
 
         DesiredCapabilities capabilities = capabilities = new DesiredCapabilities();
         capabilities.setBrowserName("chrome");

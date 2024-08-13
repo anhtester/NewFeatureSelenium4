@@ -16,11 +16,8 @@ public class SetBrowserVersion {
 
     @BeforeMethod
     public void createDriver() {
-        //Đang dùng Selenium 4.11.0 (chỉ support đến CDP 115)
-        System.setProperty("webdriver.http.factory", "jdk-http-client");
-
         ChromeOptions options = new ChromeOptions();
-        options.setBrowserVersion("115");
+        options.setBrowserVersion("127");
 
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();

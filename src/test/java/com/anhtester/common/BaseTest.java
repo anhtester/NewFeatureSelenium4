@@ -2,7 +2,6 @@ package com.anhtester.common;
 
 import com.anhtester.helpers.PropertiesHelper;
 import com.anhtester.keywords.WebUI;
-import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;

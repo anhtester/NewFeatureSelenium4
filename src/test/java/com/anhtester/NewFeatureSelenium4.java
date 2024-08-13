@@ -1,19 +1,17 @@
 package com.anhtester;
 
 import com.anhtester.common.BaseTest;
-import com.anhtester.helpers.PropertiesHelper;
 import com.anhtester.keywords.WebUI;
 import com.google.common.util.concurrent.Uninterruptibles;
-import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WindowType;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.HasDevTools;
-import org.openqa.selenium.devtools.v124.network.Network;
-import org.openqa.selenium.devtools.v124.network.model.Headers;
+import org.openqa.selenium.devtools.v127.network.Network;
+import org.openqa.selenium.devtools.v127.network.model.Headers;
 import org.openqa.selenium.support.locators.RelativeLocator;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -24,7 +22,6 @@ import java.time.Duration;
 import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Properties;
 
 public class NewFeatureSelenium4 extends BaseTest {
 

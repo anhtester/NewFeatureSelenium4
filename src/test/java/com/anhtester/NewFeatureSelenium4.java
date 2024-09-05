@@ -9,8 +9,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.HasDevTools;
-import org.openqa.selenium.devtools.v127.network.Network;
-import org.openqa.selenium.devtools.v127.network.model.Headers;
+import org.openqa.selenium.devtools.v128.network.Network;
+import org.openqa.selenium.devtools.v128.network.model.Headers;
 import org.openqa.selenium.support.locators.RelativeLocator;
 import org.testng.annotations.Test;
 
@@ -73,7 +73,7 @@ public class NewFeatureSelenium4 extends BaseTest {
 
     @Test
     public void TC5_RelativeLocators() {
-        driver.get("https://rise.anhtester.com/signin");
+        driver.get("https://rise.anhtester.com");
         WebUI.waitForPageLoaded();
         WebElement password = driver.findElement(By.id("password"));
         WebElement email = driver.findElement(RelativeLocator.with(By.tagName("input")).above(password));

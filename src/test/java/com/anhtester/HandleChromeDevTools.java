@@ -5,11 +5,11 @@ import com.anhtester.keywords.WebUI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.HasDevTools;
-import org.openqa.selenium.devtools.v130.emulation.Emulation;
-import org.openqa.selenium.devtools.v130.log.Log;
-import org.openqa.selenium.devtools.v130.network.Network;
-import org.openqa.selenium.devtools.v130.network.model.ConnectionType;
-import org.openqa.selenium.devtools.v130.security.Security;
+import org.openqa.selenium.devtools.v136.emulation.Emulation;
+import org.openqa.selenium.devtools.v136.log.Log;
+import org.openqa.selenium.devtools.v136.network.Network;
+import org.openqa.selenium.devtools.v136.network.model.ConnectionType;
+import org.openqa.selenium.devtools.v136.security.Security;
 import org.testng.annotations.Test;
 
 import java.util.Optional;

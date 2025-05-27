@@ -6,7 +6,7 @@
 
     <groupId>com.anhtester</groupId>
     <artifactId>Selenium4</artifactId>
-    <version>4.32.0</version>
+    <version>4.33.0</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -22,7 +22,7 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.32.0</version>
+            <version>4.33.0</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.testng/testng -->

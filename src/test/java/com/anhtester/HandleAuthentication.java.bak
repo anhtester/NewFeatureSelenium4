@@ -5,8 +5,8 @@ import com.google.common.util.concurrent.Uninterruptibles;
 import org.openqa.selenium.By;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.HasDevTools;
-import org.openqa.selenium.devtools.v136.network.Network;
-import org.openqa.selenium.devtools.v136.network.model.Headers;
+import org.openqa.selenium.devtools.v143.network.Network;
+import org.openqa.selenium.devtools.v143.network.model.Headers;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -28,11 +28,17 @@ public class HandleAuthentication extends BaseTest {
         devTools.createSession();
 
         // Enable the Network domain of devtools
-        devTools.send(Network.enable(
-                Optional.of(100000),
-                Optional.of(100000),
-                Optional.of(100000))
-        );
+        // devTools.send(Network.enable(
+        // Optional.of(100000),
+        // Optional.of(100000),
+        // Optional.of(100000),
+        // Optional.empty(),
+        // Optional.empty()));
+        for (java.lang.reflect.Method m : Network.class.getMethods()) {
+            if (m.getName().equals("enable")) {
+                System.out.println("METHOD: " + m);
+            }
+        }
         String auth = username + ":" + password;
 
         // Encoding the username and password using Base64 (java.util)
@@ -41,7 +47,7 @@ public class HandleAuthentication extends BaseTest {
         // Pass the network header -> Authorization : Basic <encoded String>
         Map<String, Object> headers = new HashMap<>();
         headers.put("Authorization", "Basic " + encodeToString);
-        devTools.send(Network.setExtraHTTPHeaders(new Headers(headers)));
+        // devTools.send(Network.setExtraHTTPHeaders(new Headers(headers)));
 
         // Load the application url
         driver.get(url);

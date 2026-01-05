@@ -17,3 +17,5 @@ buildNumber.properties
 *.log
 recordings/
 screenshots/
+settings.json
+.vscode/

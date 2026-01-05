@@ -18,6 +18,10 @@ public class WebUI {
         driver = _driver;
     }
 
+    public static void openURL(String url) {
+        driver.get(url);
+    }
+
     public static void sleep(double second) {
         try {
             Thread.sleep((long) (1000 * second));
@@ -84,7 +88,8 @@ public class WebUI {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40), Duration.ofMillis(500));
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
-        ExpectedCondition<Boolean> jsLoad = driver -> ((JavascriptExecutor) driver).executeScript("return document.readyState").toString().equals("complete");
+        ExpectedCondition<Boolean> jsLoad = driver -> ((JavascriptExecutor) driver)
+                .executeScript("return document.readyState").toString().equals("complete");
 
         boolean jsReady = js.executeScript("return document.readyState").toString().equals("complete");
         if (!jsReady) {
@@ -178,5 +183,19 @@ public class WebUI {
                 }
             }
         }
+    }
+
+    public static WebDriver getDriver() {
+        return driver;
+    }
+
+    public static String getTextElement(By by) {
+        waitForElementVisible(by);
+        return driver.findElement(by).getText();
+    }
+
+    public static void pressEnter(By by) {
+        waitForElementVisible(by);
+        driver.findElement(by).sendKeys(Keys.ENTER);
     }
 }

@@ -5,11 +5,11 @@ import com.anhtester.keywords.WebUI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.HasDevTools;
-import org.openqa.selenium.devtools.v136.emulation.Emulation;
-import org.openqa.selenium.devtools.v136.log.Log;
-import org.openqa.selenium.devtools.v136.network.Network;
-import org.openqa.selenium.devtools.v136.network.model.ConnectionType;
-import org.openqa.selenium.devtools.v136.security.Security;
+import org.openqa.selenium.devtools.v143.emulation.Emulation;
+import org.openqa.selenium.devtools.v143.log.Log;
+import org.openqa.selenium.devtools.v143.network.Network;
+import org.openqa.selenium.devtools.v143.network.model.ConnectionType;
+import org.openqa.selenium.devtools.v143.security.Security;
 import org.testng.annotations.Test;
 
 import java.util.Optional;
@@ -21,7 +21,8 @@ public class HandleChromeDevTools extends BaseTest {
         DevTools devTools = ((HasDevTools) driver).getDevTools();
         devTools.createSession();
         // Enable the Network domain of devtools
-        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
+        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(),
+                Optional.empty()));
         // Set 4G network
         devTools.send(Network.emulateNetworkConditions(
                 false,
@@ -31,8 +32,7 @@ public class HandleChromeDevTools extends BaseTest {
                 Optional.of(ConnectionType.CELLULAR3G),
                 Optional.of(1),
                 Optional.of(1),
-                Optional.of(true)
-        ));
+                Optional.of(true)));
 
         driver.get("https://cms.anhtester.com");
         WebUI.waitForPageLoaded();
@@ -48,8 +48,11 @@ public class HandleChromeDevTools extends BaseTest {
         devTools.send(Emulation.setGeolocationOverride(
                 Optional.of(52.5043),
                 Optional.of(13.4501),
-                Optional.of(1))
-        );
+                Optional.of(1),
+                Optional.empty(),
+                Optional.empty(),
+                Optional.empty(),
+                Optional.empty()));
 
         driver.get("https://where-am-i.org/");
 

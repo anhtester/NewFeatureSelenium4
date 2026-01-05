@@ -2,6 +2,7 @@ package com.anhtester;
 
 import com.anhtester.common.BaseTest;
 import com.anhtester.keywords.WebUI;
+import java.util.Optional;
 import com.google.common.util.concurrent.Uninterruptibles;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
@@ -9,8 +10,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.HasDevTools;
-import org.openqa.selenium.devtools.v136.network.Network;
-import org.openqa.selenium.devtools.v136.network.model.Headers;
+import org.openqa.selenium.devtools.v143.network.Network;
+import org.openqa.selenium.devtools.v143.network.model.Headers;
 import org.openqa.selenium.support.locators.RelativeLocator;
 import org.testng.annotations.Test;
 
@@ -102,7 +103,12 @@ public class NewFeatureSelenium4 extends BaseTest {
         devTools.createSession();
 
         // Enable the Network domain of devtools
-        devTools.send(Network.enable(java.util.Optional.of(100000), java.util.Optional.of(100000), java.util.Optional.of(100000)));
+        devTools.send(Network.enable(
+                Optional.of(100000),
+                Optional.of(100000),
+                Optional.of(100000),
+                Optional.empty(),
+                Optional.empty()));
         String auth = username + ":" + password;
 
         // Encoding the username and password using Base64 (java.util)
